@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Backbone.js Comics</title>
+</head>
+
+<body>
+  <div id="comicapp">
+    <header>
+      <h1>Comics</h1>
+      <input id="new-comic" type="text" placeholder="What comic did you just
+      read?">
+    </header>
+
+    <section id="main">
+      <ul id="comic-list"></ul>
+    </section>
+
+  </div>
+
+  <div id="instructions">
+    Double-click to edit a comic.
+  </div>
+
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script src="assets/underscore.js"></script>
+  <script src="assets/backbone.js"></script>
+  <script src="assets/backbone-localstorage.js"></script>
+
+  <script type="text/template" id="item-template">
+    <div class="view">
+      <label><%- title %></label>
+    </div>
+    <input class="edit" type="text" value="<%- title %>" />
+  </script>
+
+  <script type="text/template" id="stats-template">
+    <div class="comic-count"><b><%= remaining %></b> <%= remaining == 1 ? 'item'
+    : 'items' %> read</div>
+  </script>
+  <script src="comics.js"></script>
+
+  </body>
+</html>
+
