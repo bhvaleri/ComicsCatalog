@@ -122,3 +122,9 @@ body {
   color: #336699;
 }
 
+.view label {
+  display: inline-block;
+  width: 100%;
+  padding: 6px;
+}
+
