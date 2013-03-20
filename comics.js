@@ -3,6 +3,7 @@ var Comic = Backbone.Model.extend({
   defaults: function () {
     return {
       title: "empty comic...",
+      description: "no description...",
       order: Comics.nextOrder(),
     };
   },
@@ -10,6 +11,10 @@ var Comic = Backbone.Model.extend({
   initialize: function () {
     if (!this.get("title")) {
       this.set({"title": this.defaults().title});
+    }
+
+    if (!this.get("description")) {
+      this.set({"description": this.defaults().description});
     }
   },
 
@@ -30,8 +35,8 @@ var ComicList = Backbone.Collection.extend({
     return this.last().get('order') + 1;
   },
 
-  comparator: function (todo) {
-    return todo.get('order');
+  comparator: function (comic) {
+    return comic.get('order');
   }
 });
 
@@ -84,10 +89,12 @@ var AppView = Backbone.View.extend({
 
   events: {
     "keypress #new-comic": "createOnEnter",
+    "keypress #new-description": "createOnEnter"
   },
 
   initialize: function () {
-    this.input = this.$("#new-comic");
+    this.title = this.$("#new-comic");
+    this.description = this.$("#new-description");
     
     this.listenTo(Comics, 'add', this.addOne);
 
@@ -104,10 +111,15 @@ var AppView = Backbone.View.extend({
 
   createOnEnter: function (e) {
     if (e.keyCode != 13) return;
-    if (!this.input.val()) return;
-
-    Comics.create({title: this.input.val()});
-    this.input.val('');
+    if (this.title.val() && !this.description.val()) {
+      $('#new-description').focus();
+    }
+    else {
+      Comics.create({title: this.title.val(), description: this.description.val()});
+      this.title.val('');
+      this.description.val('');
+      $("#new-comic").focus();
+    }
   },
 
 });

@@ -11,6 +11,7 @@
     <header>
       <h1>Comics</h1>
       <input id="new-comic" type="text" placeholder="What comic did you just read?">
+      <input id="new-description" type="text" placeholder="Tell me about.">
     </header>
 
     <section id="main" style="display:block">
@@ -31,6 +32,7 @@
   <script type="text/template" id="item-template">
     <div class="view">
       <label><%- title %></label>
+      <label><%- description %></label>
     </div>
     <input class="edit" type="text" value="<%- title %>" />
   </script>
