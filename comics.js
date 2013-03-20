@@ -88,7 +88,7 @@ var AppView = Backbone.View.extend({
   el: $("#comicapp"),
 
   events: {
-    "keypress #new-comic": "createOnEnter",
+    "keypress #new-comic": "moveOnEnter",
     "keypress #new-description": "createOnEnter"
   },
 
@@ -109,17 +109,21 @@ var AppView = Backbone.View.extend({
     this.$("#comic-list").append(view.render().el);
   },
 
+  moveOnEnter: function (e) {
+    if (e.keyCode != 13) return;
+    if (!this.title.val()) return;
+
+    $('#new-description').focus();
+  },
+
   createOnEnter: function (e) {
     if (e.keyCode != 13) return;
-    if (this.title.val() && !this.description.val()) {
-      $('#new-description').focus();
-    }
-    else {
-      Comics.create({title: this.title.val(), description: this.description.val()});
-      this.title.val('');
-      this.description.val('');
-      $("#new-comic").focus();
-    }
+    if (!this.title.val() && !this.description.val()) return;
+
+    Comics.create({title: this.title.val(), description: this.description.val()});
+    this.title.val('');
+    this.description.val('');
+    $("#new-comic").focus();
   },
 
 });
