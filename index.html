@@ -10,7 +10,10 @@
   <div id="comicapp">
     <header>
       <h1>Comics</h1>
-      <input id="new-comic" type="text" placeholder="What comic did you just read?">
+      <input id="new-title" type="text" placeholder="Title">
+      <input id="new-issue" type="text" placeholder="Issue">
+      <input id="new-author" type="text" placeholder="Author">
+      <input id="new-artist" type="text" placeholder="Artist">
       <input id="new-description" type="text" placeholder="Tell me about.">
     </header>
 
@@ -31,8 +34,18 @@
 
   <script type="text/template" id="item-template">
     <div class="view">
-      <label><%- title %></label>
-      <label><%- description %></label>
+      <img class="comic-image" src="xmen.jpg">
+      <div class="info-container">
+        <div class="upper-info">
+          <label class="title"><%- title %></label>
+          <label class="issue-number"><%- issue %></label>
+        </div>
+        <div class="lower-info">
+          <label class="author"><%- author %></label>
+          <label class="artist"><%- artist %></label>
+          <label class="description"><%- description %></label>
+        </div>
+      </div>
     </div>
     <input class="edit" type="text" value="<%- title %>" />
   </script>

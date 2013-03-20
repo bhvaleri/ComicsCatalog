@@ -122,9 +122,30 @@ body {
   color: #336699;
 }
 
-.view label {
+.description {
   display: inline-block;
   width: 100%;
   padding: 6px;
 }
+
+.info-container {
+  display: inline-block;
+  position: absolute;
+}
+
+.view {
+  position: relative;
+}
+
+.title {
+  width: auto;
+  display: inline-block;
+}
+
+.comic-image {
+  display: inline-block;
+  max-width: 150px;
+  height: 200px;
+}
+
 
