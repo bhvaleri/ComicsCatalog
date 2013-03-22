@@ -37,12 +37,24 @@
       <img class="comic-image" src="xmen.jpg">
       <div class="info-container">
         <div class="upper-info">
-          <label class="title"><%- title %></label>
-          <label class="issue-number"><%- issue %></label>
+          <div class="title-container">
+            <label class="heading">Title</label>
+            <label class="title"><%- title %></label>
+          </div>
+          <div class="issue-container">
+            <label class="heading">#</label>
+            <label class="issue-number"><%- issue %></label>
+          </div>
         </div>
         <div class="lower-info">
-          <label class="author"><%- author %></label>
-          <label class="artist"><%- artist %></label>
+          <div class="author-container">
+            <label class="heading">Author</label>
+            <label class="author"><%- author %></label>
+          </div>  
+          <div class="artist-container">
+            <label class="heading">Artist</label>
+            <label class="artist"><%- artist %></label>
+          </div>
           <label class="description"><%- description %></label>
         </div>
       </div>

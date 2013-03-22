@@ -3,7 +3,7 @@ var Comic = Backbone.Model.extend({
   defaults: function () {
     return {
       title: "Missing title",
-      issue: "Missing issue",
+      issue: "N/A",
       author: "Missing author",
       artist: "Missing artist",
       description: "no description...",
