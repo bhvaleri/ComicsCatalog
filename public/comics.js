@@ -113,10 +113,12 @@ var AppView = Backbone.View.extend({
   },
 
   initialize: function () {
+    this.isbn = this.$("#new-isbn");
     this.title = this.$("#new-title");
     this.issue = this.$("#new-issue");
     this.artist = this.$("#new-artist");
     this.author = this.$("#new-author");
+
     this.description = this.$("#new-description");
     
     this.listenTo(Comics, 'add', this.addOne);
@@ -152,21 +154,45 @@ var AppView = Backbone.View.extend({
   createOnEnter: function (e) {
     if (e.keyCode != 13) return;
     if (!this.title.val() && !this.description.val()) return;
-
-    Comics.create({
-      title: this.title.val(),
-      issue: this.issue.val(),
-      author: this.author.val(),
-      artist: this.artist.val(),
-      description: this.description.val()
+    
+    var isbn = this.isbn.val();
+    var artist = this.artist.val();
+    var description = this.description.val();
+    
+    $.ajax({
+      type: 'GET',
+      url:'/isbn',
+      data: { "isbn": isbn.toString() },
+      success: function (data) {
+        Comics.create({
+          title: data.title,
+          issue: data.issue,
+          author: data.author,
+          artist: artist,
+          description: description
+        });
+      },
+      error: function (e) {
+        console.log(e);
+      }
     });
+    
+    var create = function () {
+      Comics.create({
+        title: this.title.val(),
+        issue: this.issue.val(),
+        author: this.author.val(),
+        artist: this.artist.val(),
+        description: this.description.val()
+      });
 
-    this.title.val('');
-    this.issue.val('');
-    this.author.val('');
-    this.artist.val('');
-    this.description.val('');
-    $("#new-comic").focus();
+      this.title.val('');
+      this.issue.val('');
+      this.author.val('');
+      this.artist.val('');
+      this.description.val('');
+      $("#new-comic").focus();
+    }
   },
 
 });
