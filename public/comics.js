@@ -1,5 +1,5 @@
-var Comic = Backbone.Model.extend({
 
+var Comic = Backbone.Model.extend({
   defaults: function () {
     return {
       title: "Missing title",
@@ -8,7 +8,7 @@ var Comic = Backbone.Model.extend({
       artist: "Missing artist",
       description: "no description...",
       image: "xmen.jpg",
-      order: Comics.nextOrder(),
+      order: Covers.nextOrder(),
     };
   },
 
@@ -44,10 +44,40 @@ var Comic = Backbone.Model.extend({
   }
 });
 
+var Cover = Backbone.Model.extend({
+  defaults: function () {
 
-var ComicList = Backbone.Collection.extend({
+    var defaultTitle = "Missing title";
+    var defaultImage = "xmen.jpg";
 
-  model: Comic,
+
+    return {
+      title: defaultTitle,
+      image: defaultImage, 
+    };
+  },
+  
+  //is this neccessary, I'm not sure if the defaults being there will do this
+  //anyways...
+  initialize: function () {
+    if (!this.get("title")) {
+      this.set({"title": this.defaults().title});
+    }
+
+    if (!this.get("image")) {
+      this.set({"image": this.defaults().image});
+    }
+
+    if (!this.get("comic")) {
+      this.set({"comic": this.defaults().comic});
+    }
+  }
+});
+
+
+var CoverList = Backbone.Collection.extend({
+
+  model: Cover,
 
   localStorage: new Backbone.LocalStorage("comics-backbone"),
 
@@ -61,19 +91,16 @@ var ComicList = Backbone.Collection.extend({
   }
 });
 
-var Comics = new ComicList;
+var Covers = new CoverList;
 
-var ComicView = Backbone.View.extend({
+var CoverView = Backbone.View.extend({
   tagName: "li",
 
-  template: _.template($('#item-template').html()),
+  template: _.template($('#cover-template').html()),
 
   events: {
-    "dblclick .view" : "edit",
-    "keypress .edit" : "updateOnEnter",
-    "blur .edit" : "close"
+    "click .cover-image" : "showComic"
   },
-
 
   initialize: function () {
     this.listenTo(this.model, 'change', this.render);
@@ -81,6 +108,29 @@ var ComicView = Backbone.View.extend({
 
   render: function () {
     this.$el.html(this.template(this.model.toJSON()));
+    return this;
+  },
+
+  showComic: function () {
+    var view = new ComicView({ model: this.model.attributes.comic}); 
+    $('.current-container .comic-view').remove()
+    $('.current-container').append(view.render().el);
+  },
+});
+
+var ComicView = Backbone.View.extend({
+  tagName: "div",
+
+  template: _.template($('#comic-template').html()),
+
+  events: {
+  },
+
+  initialize: function () {
+  },
+
+  render: function () {
+    this.$el.html(this.template(this.model));
     this.input = this.$('.edit');
     return this;
   },
@@ -127,18 +177,18 @@ var AppView = Backbone.View.extend({
     this.image = this.$("#new-image");
     this.description = this.$("#new-description");
     
-    this.listenTo(Comics, 'add', this.addOne);
+    this.listenTo(Covers, 'add', this.addOne);
 
     this.footer = this.$('footer');
     this.main = $('#main');
 
-    Comics.fetch();
+   // Covers.fetch();
   },
 
   addOne: function (comic) {
-    var view = new ComicView({model: comic});
-    this.$("#comic-list").append(view.render().el);
-  },
+    var view = new CoverView({model: comic});
+    this.$("#cover-list").append(view.render().el);
+},
 
   moveToIssue: function (e) {
     if (e.keyCode != 13) return;
@@ -165,8 +215,11 @@ var AppView = Backbone.View.extend({
     if (e.keyCode != 13) return;
     if (!this.title.val() && !this.description.val()) return;
     
-    var isbn = this.isbn.val();
+    var title = this.title.val();
+    var issue = this.issue.val();
+    var author = this.author.val();
     var artist = this.artist.val();
+    var image = this.image.val();
     var description = this.description.val();
     
    // $.ajax({
@@ -187,13 +240,19 @@ var AppView = Backbone.View.extend({
    //   }
    // });
     
-    Comics.create({
+    var comic = new Comic({
       title: this.title.val(),
       issue: this.issue.val(),
       author: this.author.val(),
       artist: this.artist.val(),
       image: this.image.val(),
       description: this.description.val()
+    });
+
+    Covers.create({
+      title: this.title.val(),
+      image: this.image.val(),
+      comic: comic
     });
 
     this.title.val('');
