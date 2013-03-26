@@ -10,11 +10,11 @@
   <div id="comicapp">
     <header>
       <h1>Comics</h1>
-      <input id="new-isbn" type="text" placeholder="Isbn">
       <input id="new-title" type="text" placeholder="Title">
-      <input id="new-issue" type="text" placeholder="Issue">
+      <input id="new-issue" type="text" placeholder="#">
       <input id="new-author" type="text" placeholder="Author">
       <input id="new-artist" type="text" placeholder="Artist">
+      <input id="new-image" type="text" placeholder="Image">
       <input id="new-description" type="text" placeholder="Tell me about.">
     </header>
 
@@ -35,7 +35,7 @@
 
   <script type="text/template" id="item-template">
     <div class="view">
-      <img class="comic-image" src="xmen.jpg">
+      <img class="comic-image" src=<%- image %>>
       <div class="info-container">
         <div class="upper-info">
           <div class="title-container">

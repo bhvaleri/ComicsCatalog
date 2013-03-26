@@ -7,6 +7,7 @@ var Comic = Backbone.Model.extend({
       author: "Missing author",
       artist: "Missing artist",
       description: "no description...",
+      image: "xmen.jpg",
       order: Comics.nextOrder(),
     };
   },
@@ -31,6 +32,10 @@ var Comic = Backbone.Model.extend({
 
     if (!this.get("description")) {
       this.set({"description": this.defaults().description});
+    }
+
+    if (!this.get("image")) {
+      this.set({"image": this.defaults().image});
     }
   },
 
@@ -107,7 +112,8 @@ var AppView = Backbone.View.extend({
     "keypress #new-title": "moveToIssue",
     "keypress #new-issue": "moveToAuthor",
     "keypress #new-author": "moveToArtist",
-    "keypress #new-artist": "moveToDescription",
+    "keypress #new-artist": "moveToImage",
+    "keypress #new-image": "moveToDescription",
 
     "keypress #new-description": "createOnEnter"
   },
@@ -118,7 +124,7 @@ var AppView = Backbone.View.extend({
     this.issue = this.$("#new-issue");
     this.artist = this.$("#new-artist");
     this.author = this.$("#new-author");
-
+    this.image = this.$("#new-image");
     this.description = this.$("#new-description");
     
     this.listenTo(Comics, 'add', this.addOne);
@@ -146,6 +152,10 @@ var AppView = Backbone.View.extend({
     if (e.keyCode != 13) return;
     $('#new-artist').focus();
   },
+  moveToImage: function (e) {
+    if (e.keyCode != 13) return;
+    $('#new-image').focus();
+  },
   moveToDescription: function (e) {
     if (e.keyCode != 13) return;
     $('#new-description').focus();
@@ -159,40 +169,40 @@ var AppView = Backbone.View.extend({
     var artist = this.artist.val();
     var description = this.description.val();
     
-    $.ajax({
-      type: 'GET',
-      url:'/isbn',
-      data: { "isbn": isbn.toString() },
-      success: function (data) {
-        Comics.create({
-          title: data.title,
-          issue: data.issue,
-          author: data.author,
-          artist: artist,
-          description: description
-        });
-      },
-      error: function (e) {
-        console.log(e);
-      }
-    });
+   // $.ajax({
+   //   type: 'GET',
+   //   url:'/isbn',
+   //   data: { "isbn": isbn.toString() },
+   //   success: function (data) {
+   //     Comics.create({
+   //       title: data.title,
+   //       issue: data.issue,
+   //       author: data.author,
+   //       artist: artist,
+   //       description: description
+   //     });
+   //   },
+   //   error: function (e) {
+   //     console.log(e);
+   //   }
+   // });
     
-    var create = function () {
-      Comics.create({
-        title: this.title.val(),
-        issue: this.issue.val(),
-        author: this.author.val(),
-        artist: this.artist.val(),
-        description: this.description.val()
-      });
+    Comics.create({
+      title: this.title.val(),
+      issue: this.issue.val(),
+      author: this.author.val(),
+      artist: this.artist.val(),
+      image: this.image.val(),
+      description: this.description.val()
+    });
 
-      this.title.val('');
-      this.issue.val('');
-      this.author.val('');
-      this.artist.val('');
-      this.description.val('');
-      $("#new-comic").focus();
-    }
+    this.title.val('');
+    this.issue.val('');
+    this.author.val('');
+    this.artist.val('');
+    this.image.val('');
+    this.description.val('');
+    $("#new-comic").focus();
   },
 
 });
