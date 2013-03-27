@@ -154,6 +154,7 @@ body {
 }
 
 .upper-info{
+  font-size: 24px;
   padding: 5px 5px 5px 10px;
 }
 
@@ -169,10 +170,16 @@ body {
   position: relative;
 }
 
-.cover-image, .comic-image {
+.cover-image {
   display: inline-block;
   max-width: 150px;
   height: 200px;
+}
+
+.comic-image {
+  display: inline-block;
+  width: 225px;
+  height: 300px;
 }
 
 .comic-image {
@@ -181,11 +188,11 @@ body {
 
 .comic-view {
    position: fixed;
-   width: 300px;
-   height: 220px;
+   width: 500px;
+   height: 320px;
    top: 50%;
-   margin-top: -150px;
-   margin-left: -150px;
+   margin-top: -250px;
+   margin-left: -250px;
    left: 50%;
    z-index: 1002;
    background-color: white;
