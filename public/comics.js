@@ -1,4 +1,3 @@
-
 var Comic = Backbone.Model.extend({
   defaults: function () {
     return {
@@ -112,9 +111,10 @@ var CoverView = Backbone.View.extend({
   },
 
   showComic: function () {
+    $('.overlay-background').show();
     var view = new ComicView({ model: this.model.attributes.comic}); 
-    $('.current-container .comic-view').remove()
-    $('.current-container').append(view.render().el);
+    $('body .comic-view').remove()
+    $('body').append(view.render().el);
   },
 });
 
@@ -124,6 +124,7 @@ var ComicView = Backbone.View.extend({
   template: _.template($('#comic-template').html()),
 
   events: {
+    'click': 'closeComic'
   },
 
   initialize: function () {
@@ -135,19 +136,9 @@ var ComicView = Backbone.View.extend({
     return this;
   },
 
-  edit: function () {
-    this.$el.addClass("editing");
-    this.input.focus();
-  },
-
-  close: function() {
-    var value = this.input.val();
-    if (!value) {
-      this.clear();
-    } else {
-      this.model.save({title: value});
-      this.$el.removeClass("editing");
-    }
+  closeComic: function () {
+    $('.comic-view').remove();
+    $('.overlay-background').hide();
   },
 
   updateOnEnter: function(e) {
