@@ -71,7 +71,6 @@ body {
   background-color: #FFF;
   position: relative;
   margin-left: 530px;
-  width: 500px;
 }
 
 #cover-list {
@@ -81,10 +80,12 @@ body {
 }
 
 #cover-list li {
+  display: inline-block;
   padding: 18px 20px 18px 0;
   position: relative;
   font-size: 24px;
   border-bottom: 1px solid #cccccc;
+  width: 200px;
 }
 
 #cover-list li:last-child {
@@ -155,7 +156,7 @@ body {
 
 .cover-image {
   display: block;
-  max-width: 150px;
+  width: 150px;
   height: 200px;
 }
 
