@@ -9,24 +9,28 @@
 <body>
   <div class="overlay-background"></div>
   <div id="comicapp">
-    <header>
-      <h1>Comics</h1>
-      <input id="new-title" type="text" placeholder="Title">
-      <input id="new-issue" type="text" placeholder="#">
-      <input id="new-author" type="text" placeholder="Author">
-      <input id="new-artist" type="text" placeholder="Artist">
-      <input id="new-image" type="text" placeholder="Image">
-      <input id="new-description" type="text" placeholder="Tell me about.">
-    </header>
-
-    <section id="main" style="display:block">
-      <ul id="cover-list"></ul>
-    </section>
+   <div class="sidebar">
+     <div id="comic-input">
+       <header>
+         <h1>Comics</h1>
+         <input id="new-title" type="text" placeholder="Title">
+         <input id="new-issue" type="text" placeholder="#">
+         <input id="new-author" type="text" placeholder="Author">
+         <input id="new-artist" type="text" placeholder="Artist">
+         <input id="new-image" type="text" placeholder="Image">
+         <input id="new-description" type="text" placeholder="Tell me about it.">
+       </header>
+     </div>
+   </div>
+   <div id="cover-container">
+     <ul id="cover-list"></ul>
+   </div>
+  </div>
 
   </div>
 
   <div id="instructions">
-    Double-click to edit a comic.
+    Click a cover.
   </div>
 
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>

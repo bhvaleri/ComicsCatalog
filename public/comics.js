@@ -170,8 +170,7 @@ var AppView = Backbone.View.extend({
     
     this.listenTo(Covers, 'add', this.addOne);
 
-    this.footer = this.$('footer');
-    this.main = $('#main');
+    this.main = $('.cover-container');
 
    // Covers.fetch();
   },

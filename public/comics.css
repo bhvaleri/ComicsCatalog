@@ -9,12 +9,21 @@ body {
   line-height: 1.4em;
   background: #eeeeee;
   color: #333333;
-  width: 520px;
+  /*width: 520px;*/
   margin: 0 auto;
   -webkit-font-smoothing: antialiased;
 }
 
 #comicapp {
+  width: 100%;
+}
+
+.sidebar {
+  width: 520px; 
+  position: fixed;
+}
+
+#comic-input {
   background: #fff;
   padding: 20px;
   margin-bottom: 40px;
@@ -30,14 +39,14 @@ body {
   border-radius: 0 0 5px 5px;
 }
 
-#comicapp h1 {
+#comic-input h1 {
   font-size: 36px;
   font-weight: bold;
   text-align: center;
   padding: 0 0 10px 0;
 }
 
-#comicapp input[type="text"] {
+#comic-input input[type="text"] {
   width: 466px;
   font-size: 24px;
   font-family: inherit;
@@ -54,12 +63,15 @@ body {
 }
 
 
-#comicapp input::-webkit-input-placeholder {
+#comic-input input::-webkit-input-placeholder {
   font-style: italic;
 }
 
-#main {
-  display: none;
+#cover-container {
+  background-color: #FFF;
+  position: relative;
+  margin-left: 530px;
+  width: 500px;
 }
 
 #cover-list {
