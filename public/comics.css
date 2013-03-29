@@ -13,7 +13,7 @@ body {
   margin: 0 auto;
   -webkit-font-smoothing: antialiased;
 }
-
+]
 #comicapp {
   width: 100%;
 }
@@ -91,37 +91,8 @@ body {
   border-bottom: none;
 }
 
-#cover-list li.editing {
-  border-bottom: none;
-  margin-top: -1px;
-  padding: 0;
-}
-
-#cover-list li.editing:last-child {
-  margin-bottom: -1px;
-}
-
-#cover-list li.editing .edit {
-  display: block;
-  width: 444px;
-  padding: 13px 15px 14px 20px;
-  margin: 0;
-}
-
-#cover-list li.editing .cover-view {
-  display: none;
-}
-
 #cover-list li .cover-view label {
   word-break: break-word;
-}
-
-#cover-list li .edit {
-  display: none;
-}
-
-#cover-count span {
-  font-weight: bold;
 }
 
 #instructions {
@@ -183,10 +154,11 @@ body {
 }
 
 .cover-image {
-  display: inline-block;
+  display: block;
   max-width: 150px;
   height: 200px;
 }
+
 
 .comic-image {
   display: inline-block;
