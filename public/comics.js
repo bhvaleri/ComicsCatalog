@@ -78,7 +78,7 @@ var CoverList = Backbone.Collection.extend({
 
   model: Cover,
 
-  localStorage: new Backbone.LocalStorage("comics-backbone"),
+  localStorage: new Backbone.LocalStorage("covers-backbone"),
 
   nextOrder: function () {
     if (!this.length) return 1;
@@ -169,16 +169,21 @@ var AppView = Backbone.View.extend({
     this.description = this.$("#new-description");
     
     this.listenTo(Covers, 'add', this.addOne);
+    this.listenTo(Covers, 'reset', this.addAll);
 
     this.main = $('.cover-container');
 
-   // Covers.fetch();
+    Covers.fetch();
   },
 
   addOne: function (comic) {
     var view = new CoverView({model: comic});
     this.$("#cover-list").append(view.render().el);
-},
+  },
+
+  addAll: function () {
+    Covers.each(this.addOne, this);
+  },
 
   moveToIssue: function (e) {
     if (e.keyCode != 13) return;
@@ -251,7 +256,7 @@ var AppView = Backbone.View.extend({
     this.artist.val('');
     this.image.val('');
     this.description.val('');
-    $("#new-comic").focus();
+    $("#new-title").focus();
   },
 
 });
