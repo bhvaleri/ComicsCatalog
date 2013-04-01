@@ -4,6 +4,11 @@
   <meta charset="utf-8">
   <title>Backbone.js Comics</title>
   <link rel="stylesheet" href="comics.css"/>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script src="http://code.jquery.com/ui/1.10.2/jquery-ui.js"></script>
+  <script src="assets/underscore.js"></script>
+  <script src="assets/backbone.js"></script>
+  <script src="assets/backbone-localstorage.js"></script>
 </head>
 
 <body>
@@ -23,7 +28,6 @@
      </div>
    </div>
    <div id="cover-container">
-     <ul id="cover-list"></ul>
    </div>
   </div>
 
@@ -33,13 +37,9 @@
     Click a cover.
   </div>
 
-  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-  <script src="assets/underscore.js"></script>
-  <script src="assets/backbone.js"></script>
-  <script src="assets/backbone-localstorage.js"></script>
 
   <script type="text/template" id="cover-template">
-    <div class="cover-view">
+    <div class="cover-view ">
       <img class="cover-image" src=<%-image%> >
       <label class="cover-title"><%-title%></label>
     </div>
