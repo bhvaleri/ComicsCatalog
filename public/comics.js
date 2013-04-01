@@ -263,9 +263,6 @@ var AppView = Backbone.View.extend({
     this.author = this.$("#new-author");
     this.image = this.$("#new-image");
     this.description = this.$("#new-description");
-    
-    //this.listenTo(Covers, 'add', this.addOne);
-    //this.listenTo(Covers, 'reset', this.addAll);
 
     this.main = $('.cover-container');
 
@@ -314,24 +311,6 @@ var AppView = Backbone.View.extend({
     var artist = this.artist.val();
     var image = this.image.val();
     var description = this.description.val();
-    
-   // $.ajax({
-   //   type: 'GET',
-   //   url:'/isbn',
-   //   data: { "isbn": isbn.toString() },
-   //   success: function (data) {
-   //     Comics.create({
-   //       title: data.title,
-   //       issue: data.issue,
-   //       author: data.author,
-   //       artist: artist,
-   //       description: description
-   //     });
-   //   },
-   //   error: function (e) {
-   //     console.log(e);
-   //   }
-   // });
     
     var comic = new Comic({
       title: this.title.val(),
