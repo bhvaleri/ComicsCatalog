@@ -106,10 +106,6 @@ var CoverView = Backbone.View.extend({
     var view = new ComicView({ model: this.model.attributes.comic}); 
     $('body .comic-view').remove()
     $('body').append(view.render().el);
-  },
-
-  drop: function (event, index) {
-    this.$el.trigger('update-sort', [this.model, index]);
   }
 });
 
