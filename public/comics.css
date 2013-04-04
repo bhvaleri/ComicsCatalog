@@ -71,6 +71,7 @@ body {
   background-color: #FFF;
   position: relative;
   margin-left: 530px;
+  max-width: 810px;
 }
 
 #cover-list {
@@ -81,10 +82,10 @@ body {
 
 #cover-list li {
   display: inline-block;
-  padding: 18px 20px 18px 0;
+  padding: 10px 0 10px 10px;
   position: relative;
   font-size: 11px;
-  width: 200px;
+  width: 150px;
 }
 
 #instructions {
@@ -143,6 +144,8 @@ body {
 
 .cover-view {
   position: relative;
+  width: 150px;
+  margin: 0;
 }
 
 .cover-image {
