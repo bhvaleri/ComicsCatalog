@@ -42,6 +42,7 @@ var Cover = Backbone.Model.extend({
   defaults: {
     order: 0,
     title: 'Missing Title',
+    issue: 'N/A',
     image: 'xmen.jpg'
   },
 
@@ -56,6 +57,10 @@ var Cover = Backbone.Model.extend({
 
     if (!this.get('order')) {
       this.set({ 'order': this.defaults.order });
+    }
+
+    if (!this.get('issue')) {
+      this.set({ 'issue': this.defaults.issue });
     }
 
     if (!this.get('comic')) {
@@ -123,9 +128,9 @@ var CoverListView = Backbone.View.extend({
 
   render: function () {
     this._listItems = {};
+
     this.listenTo(this.collection, 'sync reset', this.listSync );
     this.listenTo(this.collection, 'add', this.listAdd );
-    this.listenTo(this.collection, 'remove', this.listRemove );
 
     this.listSync();
 
@@ -158,16 +163,12 @@ var CoverListView = Backbone.View.extend({
     } else {
       this.$el.sortable({ containment: 'parent', tolerance: 'pointer' });
     }
-
   },
 
   listSync: function () {
     var list = this.collection.models;
     var sortedList = _.sortBy(list, function (model) { return model.attributes.order; });
     this._listIsSyncing = true;
-
-    _.invoke(this._listItems, 'remove');
-    this._listItems = {};
 
     _.each(sortedList, _.bind(function (m) {
       this.listAdd(m);
@@ -189,23 +190,7 @@ var CoverListView = Backbone.View.extend({
     if (!this._listIsSyncing) {
       this.listSetup();
     }
-  },
-
-  listRemove: function (model) {
-    if (this._listItems[model.cid]) {
-      this._listItems[model.cid].remove();
-      delete this._listItems[model.cid];
-    }
-
-    if (!this._listIsSyncing) {
-      this.listSetup();
-    }
-  },
-
-  remove: function () {
-    _.invoke(this._listItems, 'remove');
   }
-
 });
 
 var CoversView = new CoverListView({ collection: Covers });
@@ -319,6 +304,7 @@ var AppView = Backbone.View.extend({
 
     Covers.create({
       title: this.title.val(),
+      issue: this.issue.val(),
       image: this.image.val(),
       comic: comic
     });

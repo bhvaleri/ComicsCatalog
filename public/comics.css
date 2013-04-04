@@ -83,16 +83,8 @@ body {
   display: inline-block;
   padding: 18px 20px 18px 0;
   position: relative;
-  font-size: 24px;
+  font-size: 11px;
   width: 200px;
-}
-
-#cover-list li:last-child {
-  border-bottom: none;
-}
-
-#cover-list li .cover-view label {
-  word-break: break-word;
 }
 
 #instructions {
