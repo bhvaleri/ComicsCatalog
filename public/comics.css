@@ -13,6 +13,10 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
+h1 {
+  text-align: center;
+}
+
 #comicapp {
   width: 100%;
 }
@@ -37,7 +41,7 @@ body {
   border-radius: 0 0 5px 5px;
 }
 
-#comic-input h1 {
+#comic-input h2 {
   font-size: 20px;
   font-weight: bold;
   /*text-align: center;*/
