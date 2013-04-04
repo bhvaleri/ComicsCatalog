@@ -14,7 +14,16 @@ body {
 }
 
 h1 {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 75px;
+  margin: 0px;
+  padding-top: 25px;
+  font-size: 50px;
+  background-color: #eeeeee;
   text-align: center;
+  z-index: 1002;
 }
 
 #comicapp {
@@ -72,6 +81,7 @@ h1 {
 #cover-container {
   background-color: #FFF;
   position: relative;
+  margin-top: 100px;
   margin-left: 280px;
   max-width: 810px;
 }
