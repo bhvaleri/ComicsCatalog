@@ -6,7 +6,7 @@ var Comic = Backbone.Model.extend({
       author: "Missing author",
       artist: "Missing artist",
       description: "no description...",
-      image: "xmen.jpg",
+      image: "public/xmen.jpg",
     };
   },
 
@@ -43,7 +43,7 @@ var Cover = Backbone.Model.extend({
     order: 0,
     title: 'Missing Title',
     issue: 'N/A',
-    image: 'xmen.jpg'
+    image: 'public/xmen.jpg'
   },
 
   initialize: function () {
@@ -84,6 +84,21 @@ var CoverList = Backbone.Collection.extend({
   comparator: 'order'
 });
 
+var collection = [
+  {
+    title: "X-Men",
+    issue: "094",
+    image: "http://images2.wikia.nocookie.net/__cb20070228032541/marveldatabase/images/5/58/X-Men_Vol_1_94.jpg",
+    comic: new Comic({
+      title: "X-Men",
+      issue: "094",
+      image: "http://images2.wikia.nocookie.net/__cb20070228032541/marveldatabase/images/5/58/X-Men_Vol_1_94.jpg",
+      author: "Claremont",
+      artist: "Cockrum",
+      description: "Super COOL!"
+    })
+  }
+];
 var Covers = new CoverList;
 
 
