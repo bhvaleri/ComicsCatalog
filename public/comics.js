@@ -241,6 +241,45 @@ var collection = [
       description: "Sweet comic, sweet cover variant by Bryan Lee O'Malley."
     })
   },
+  {
+    title: "Thor God of Thunder",
+    issue: "001",
+    image: "http://i2.cdnds.net/12/32/618x939/comics_thor_god_of_thunder_marvel_now.jpg",
+    comic: new Comic({
+      title: "Thor God of Thunder",
+      issue: "001",
+      image: "http://i2.cdnds.net/12/32/618x939/comics_thor_god_of_thunder_marvel_now.jpg",
+      author: "Aaron",
+      artist: "Ribic",
+      description: "Digging the three different time lines. Cool to see a young Thor."
+    })
+  },
+  {
+    title: "Iron Man",
+    issue: "001",
+    image: "http://static.comicvine.com/uploads/scale_super/0/40/2548168-ironman_1_cover.jpeg",
+    comic: new Comic({
+      title: "Iron Man",
+      issue: "001",
+      image: "http://static.comicvine.com/uploads/scale_super/0/40/2548168-ironman_1_cover.jpeg",
+      author: "Gillen",
+      artist: "Land",
+      description: "Liked this arch so much I went back and read the first Extremis collection."
+    })
+  },
+  {
+    title: "Iron Man",
+    issue: "002",
+    image: "http://i.annihil.us/u/prod/marvel/i/mg/3/90/5109bda992770/detail.jpg",
+    comic: new Comic({
+      title: "Iron Man",
+      issue: "002",
+      image: "http://i.annihil.us/u/prod/marvel/i/mg/3/90/5109bda992770/detail.jpg",
+      author: "Gillen",
+      artist: "Land",
+      description: "A man with out pretensions is a man without beliefs. Or something like that, cool quote from the overly pretensious villain."
+    })
+  },
 ];
 var Covers = new CoverList(collection);
 
