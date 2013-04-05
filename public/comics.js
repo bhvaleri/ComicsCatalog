@@ -99,7 +99,7 @@ var collection = [
     })
   }
 ];
-var Covers = new CoverList;
+var Covers = new CoverList(collection);
 
 
 var CoverView = Backbone.View.extend({
@@ -262,7 +262,7 @@ var AppView = Backbone.View.extend({
 
     this.main = $('.cover-container');
 
-    Covers.fetch();
+    //Covers.fetch();
 
     $('#cover-container').append(CoversView.render().$el);
   },
