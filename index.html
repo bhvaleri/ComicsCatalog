@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Backbone.js Comics</title>
+  <link rel="stylesheet" href="public/comics.css"/>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script src="http://code.jquery.com/ui/1.10.2/jquery-ui.js"></script>
+  <script src="public/assets/underscore.js"></script>
+  <script src="public/assets/backbone.js"></script>
+  <script src="public/assets/backbone-localstorage.js"></script>
+</head>
+
+<body>
+  <div class="overlay-background"></div>
+  <h1>Comic Catalog</h1>
+  <div id="comicapp">
+   <div class="sidebar">
+     <div id="comic-input">
+       <h2>Add a new comic.</h2>
+       <input id="new-title" type="text" placeholder="Title">
+       <input id="new-issue" type="text" placeholder="#">
+       <input id="new-author" type="text" placeholder="Author">
+       <input id="new-artist" type="text" placeholder="Artist">
+       <input id="new-image" type="text" placeholder="Image">
+       <input id="new-description" type="text" placeholder="Tell me about it.">
+     </div>
+   </div>
+   <div id="cover-container">
+   </div>
+  </div>
+
+  </div>
+
+  <div id="instructions">
+    Double-Click or Click and Drag a cover.
+  </div>
+
+
+  <script type="text/template" id="cover-template">
+    <div class="cover-view ">
+      <img class="cover-image" src=<%-image%> >
+      <label class="cover-title"><%-title%></label>
+      <label class="cover-issue"><%-issue%></label>
+    </div>
+  </script>
+
+  <script type="text/template" id="comic-template">
+    <div class="comic-view">
+      <img class="comic-image" src=<%- image %>>
+      <div class="info-container">
+        <div class="upper-info">
+          <div class="title-container">
+            <label class="heading">Title</label>
+            <label class="title"><%- title %></label>
+          </div>
+          <div class="issue-container">
+            <label class="heading">#</label>
+            <label class="issue-number"><%- issue %></label>
+          </div>
+        </div>
+        <div class="lower-info">
+          <div class="author-container">
+            <label class="heading">Author</label>
+            <label class="author"><%- author %></label>
+          </div>  
+          <div class="artist-container">
+            <label class="heading">Artist</label>
+            <label class="artist"><%- artist %></label>
+          </div>
+          <label class="description"><%- description %></label>
+        </div>
+      </div>
+    </div>
+    <!--<input class="edit" type="text" value="<%- title %>" />-->
+  </script>
+
+  <script src="comics.js"></script>
+
+  </body>
+</html>
+
