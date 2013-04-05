@@ -1,0 +1,203 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font: 14px "Helvetica Neue", Helvetica, Arial, sans-serif;
+  line-height: 1.4em;
+  background: #eeeeee;
+  color: #333333;
+  margin: 0 auto;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1 {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 75px;
+  margin: 0px;
+  padding-top: 25px;
+  font-size: 50px;
+  background-color: #eeeeee;
+  text-align: center;
+  z-index: 1002;
+}
+
+#comicapp {
+  width: 100%;
+}
+
+.sidebar {
+  width: 270px; 
+  position: fixed;
+}
+
+#comic-input {
+  background: #fff;
+  padding: 10px;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.2) 0 2px 6px 0;
+  -moz-box-shadow: rgba(0, 0, 0, 0.2) 0 2px 6px 0;
+  -ms-box-shadow: rgba(0, 0, 0, 0.2) 0 2px 6px 0;
+  -o-box-shadow: rgba(0, 0, 0, 0.2) 0 2px 6px 0;
+  box-shadow: rgba(0, 0, 0, 0.2) 0 2px 6px 0;
+  -webkit-border-radius: 0 0 5px 5px;
+  -moz-border-radius: 0 0 5px 5px;
+  -ms-border-radius: 0 0 5px 5px;
+  -o-border-radius: 0 0 5px 5px;
+  border-radius: 0 0 5px 5px;
+}
+
+#comic-input h2 {
+  font-size: 20px;
+  font-weight: bold;
+  /*text-align: center;*/
+  padding: 0;
+}
+
+#comic-input input[type="text"] {
+  width: 235px;
+  font-size: 24px;
+  font-family: inherit;
+  line-height: 1.4em;
+  border: 0;
+  outline: none;
+  padding: 6px;
+  border: 1px solid #999999;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.2) 0 1px 2px 0 inset;
+  -moz-box-shadow: rgba(0, 0, 0, 0.2) 0 1px 2px 0 inset;
+  -ms-box-shadow: rgba(0, 0, 0, 0.2) 0 1px 2px 0 inset;
+  -o-box-shadow: rgba(0, 0, 0, 0.2) 0 1px 2px 0 inset;
+  box-shadow: rgba(0, 0, 0, 0.2) 0 1px 2px 0 inset;
+}
+
+
+#comic-input input::-webkit-input-placeholder {
+  font-style: italic;
+}
+
+#cover-container {
+  background-color: #FFF;
+  position: relative;
+  margin-top: 100px;
+  margin-left: 280px;
+  max-width: 810px;
+}
+
+#cover-list {
+  margin: 10px 0;
+  padding: 0;
+  list-style: none;
+}
+
+#cover-list li {
+  display: inline-block;
+  padding: 10px 0 10px 10px;
+  position: relative;
+  font-size: 11px;
+  width: 150px;
+}
+
+#instructions {
+  margin: 10px auto;
+  color: #777777;
+  text-shadow: rgba(255, 255, 255, 0.8) 0 1px 0;
+  text-align: center;
+}
+
+#instructions a {
+  color: #336699;
+}
+
+.overlay-background {
+  display: none;
+  top: 0;
+  left: 0;
+  position: fixed;
+  background-color: rgba(0,0,0,0.8);
+  width: 100%;
+  height: 100%;
+  z-index: 1001;
+}
+
+.current-container {
+  position: relative;
+}
+
+.description {
+  display: inline-block;
+  width: 100%;
+  padding: 10px 0px;
+}
+
+.info-container {
+  display: inline-block;
+  position: absolute;
+  margin: 10px;
+}
+.upper-info div {
+  display: inline-block;
+}
+
+.upper-info{
+  font-size: 24px;
+  padding: 5px 5px 5px 10px;
+}
+
+.lower-info {
+  padding: 10px 5px 10px 10px;
+  font-size: 14px;
+}
+.lower-info div {
+  display: block;
+}
+
+.cover-view {
+  position: relative;
+  width: 150px;
+  margin: 0;
+}
+
+.cover-image {
+  display: block;
+  width: 150px;
+  height: 200px;
+}
+
+
+.comic-image {
+  display: inline-block;
+  width: 225px;
+  height: 300px;
+}
+
+.comic-image {
+  margin: 10px 0 10px 10px;
+}
+
+.comic-view {
+   position: fixed;
+   width: 500px;
+   height: 320px;
+   top: 50%;
+   margin-top: -250px;
+   margin-left: -250px;
+   left: 50%;
+   z-index: 1002;
+   background-color: white;
+   border-radius: 5px;
+}
+
+.close {
+  position: absolute;
+  z-index: 1002;
+  text-decoration: none;
+  display: block;
+
+}
+
+.heading {
+  color: #777777;
+}
