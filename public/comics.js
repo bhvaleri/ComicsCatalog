@@ -124,6 +124,45 @@ var collection = [
       description: "Really want to read the last chunk of Amazing Spiderman to see the lead up to this. Only a matter of time before Peter Parker is back!"
     })
   },
+  {
+    title: "Adventure Time",
+    issue: "001",
+    image: "http://images2.wikia.nocookie.net/__cb20120206200527/adventuretimewithfinnandjake/images/8/86/Tumblr_lv1cpbESgC1qzrbk9o1_1280.jpg",
+    comic: new Comic({
+      title: "Adventure Time",
+      issue: "001",
+      image: "http://images2.wikia.nocookie.net/__cb20120206200527/adventuretimewithfinnandjake/images/8/86/Tumblr_lv1cpbESgC1qzrbk9o1_1280.jpg",
+      author: "North",
+      artist: "Paroline & Lamb",
+      description: "Awesome show now and awesome comic. Really dig Ryan North's writing."
+    })
+  },
+  {
+    title: "Adventure Time",
+    issue: "002",
+    image: "http://images3.wikia.nocookie.net/__cb20120104175150/adventuretimewithfinnandjake/images/8/8a/002-a.jpeg",
+    comic: new Comic({
+      title: "Adventure Time",
+      issue: "002",
+      image: "http://images3.wikia.nocookie.net/__cb20120104175150/adventuretimewithfinnandjake/images/8/8a/002-a.jpeg",
+      author: "North",
+      artist: "Paroline & Lamb",
+      description: "Watch out of the Lich!"
+    })
+  },
+  {
+    title: "Adventure Time",
+    issue: "003",
+    image: "http://images.wikia.com/adventuretimewithfinnandjake/images/b/b4/Tumblr_lyouzbPrm51r7wz6no1_1280.jpg",
+    comic: new Comic({
+      title: "Adventure Time",
+      issue: "003",
+      image: "http://images.wikia.com/adventuretimewithfinnandjake/images/b/b4/Tumblr_lyouzbPrm51r7wz6no1_1280.jpg",
+      author: "North",
+      artist: "Paroline & Lamb",
+      description: "Sand and ice Finn and Jakes!"
+    })
+  },
 ];
 var Covers = new CoverList(collection);
 
