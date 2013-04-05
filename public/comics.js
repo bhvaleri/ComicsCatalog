@@ -163,6 +163,71 @@ var collection = [
       description: "Sand and ice Finn and Jakes!"
     })
   },
+  {
+    title: "Fantastic Four",
+    issue: "001",
+    image: "http://i.annihil.us/u/prod/marvel/i/mg/1/03/5024015648d5d/detail.jpg",
+    comic: new Comic({
+      title: "Fantastic Four",
+      issue: "001",
+      image: "http://i.annihil.us/u/prod/marvel/i/mg/1/03/5024015648d5d/detail.jpg",
+      author: "Fraction",
+      artist: "Bagley",
+      description: "Really psyched for this and the FF series working together."
+    })
+  },
+  {
+    title: "FF",
+    issue: "001",
+    image: "http://www.comicbookmovie.com/images/uploads/1-b0f8857d4c.jpg",
+    comic: new Comic({
+      title: "FF",
+      issue: "001",
+      image: "http://www.comicbookmovie.com/images/uploads/1-b0f8857d4c.jpg",
+      author: "Fraction",
+      artist: "Allred",
+      description: "Ant-man!"
+    })
+  },
+  {
+    title: "Uncanny X-Men",
+    issue: "001",
+    image: "http://i.annihil.us/u/prod/marvel/i/mg/f/00/511e3adacc9b9/detail.jpg",
+    comic: new Comic({
+      title: "Uncanny X-Men",
+      issue: "001",
+      image: "http://i.annihil.us/u/prod/marvel/i/mg/f/00/511e3adacc9b9/detail.jpg",
+      author: "Bendis",
+      artist: "Bachalo",
+      description: "All these sweet new X-Men books made me go read the AvX collection, why didn't I start reading comics sooner!?"
+    })
+  },
+  {
+    title: "Indesctructible Hulk",
+    issue: "001",
+    image: "http://i.newsarama.com/images/indestructible-hulk-1.jpg",
+    comic: new Comic({
+      title: "Indestructible Hulk",
+      issue: "001",
+      image: "http://i.newsarama.com/images/indestructible-hulk-1.jpg",
+      author: "Waid",
+      artist: "Yu",
+      description: "Hulk Science!"
+    })
+  },
+  {
+    title: "",
+    issue: "",
+    image: "",
+    comic: new Comic({
+      title: "",
+      issue: "",
+      image: "",
+      author: "",
+      artist: "",
+      description: ""
+    })
+  },
 ];
 var Covers = new CoverList(collection);
 
