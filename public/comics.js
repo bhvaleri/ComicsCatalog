@@ -216,16 +216,29 @@ var collection = [
     })
   },
   {
-    title: "",
-    issue: "",
-    image: "",
+    title: "X-Men Legacy",
+    issue: "001",
+    image: "http://i.annihil.us/u/prod/marvel/i/mg/3/40/50252b686f0f3/detail.jpg",
     comic: new Comic({
-      title: "",
-      issue: "",
-      image: "",
-      author: "",
-      artist: "",
-      description: ""
+      title: "X-Men Legacy",
+      issue: "001",
+      image: "http://i.annihil.us/u/prod/marvel/i/mg/3/40/50252b686f0f3/detail.jpg",
+      author: "Spurrier",
+      artist: "Huat",
+      description: "Legion seems like a pretty great character. I want to go back and read more of his story."
+    })
+  },
+  {
+    title: "Young Avengers",
+    issue: "001",
+    image: "http://i1.cdnds.net/12/41/618x937/marvel_now_young_avengers.jpg",
+    comic: new Comic({
+      title: "Young Avenger",
+      issue: "001",
+      image: "http://i1.cdnds.net/12/41/618x937/marvel_now_young_avengers.jpg",
+      author: "Gillen",
+      artist: "Norton",
+      description: "Sweet comic, sweet cover variant by Bryan Lee O'Malley."
     })
   },
 ];
