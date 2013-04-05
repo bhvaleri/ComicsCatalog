@@ -97,7 +97,33 @@ var collection = [
       artist: "Cockrum",
       description: "Super COOL!"
     })
-  }
+  },
+  {
+    title: "All New X-Men",
+    issue: "001",
+    image: "http://upload.wikimedia.org/wikipedia/en/2/2a/All-New_X-Men_1.jpg",
+    comic: new Comic({
+      title: "All New X-Men",
+      issue: "001",
+      image: "http://upload.wikimedia.org/wikipedia/en/2/2a/All-New_X-Men_1.jpg",
+      author: "Bendis",
+      artist: "Immonen",
+      description: "Sweet idea, looking forward to seeing the Cyclops vs Cylcops confrontation."
+    })
+  },
+  {
+    title: "The Superior Spider-Man",
+    issue: "001",
+    image: "http://upload.wikimedia.org/wikipedia/en/7/74/Superior_spiderman_1.jpg",
+    comic: new Comic({
+      title: "The Superior Spider-Man",
+      issue: "001",
+      image: "http://upload.wikimedia.org/wikipedia/en/7/74/Superior_spiderman_1.jpg",
+      author: "Slott",
+      artist: "Stegman",
+      description: "Really want to read the last chunk of Amazing Spiderman to see the lead up to this. Only a matter of time before Peter Parker is back!"
+    })
+  },
 ];
 var Covers = new CoverList(collection);
 
