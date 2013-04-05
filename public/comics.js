@@ -134,7 +134,7 @@ var collection = [
       image: "http://images2.wikia.nocookie.net/__cb20120206200527/adventuretimewithfinnandjake/images/8/86/Tumblr_lv1cpbESgC1qzrbk9o1_1280.jpg",
       author: "North",
       artist: "Paroline & Lamb",
-      description: "Awesome show now and awesome comic. Really dig Ryan North's writing."
+      description: "Awesome show and now an awesome comic. Really dig Ryan North's writing."
     })
   },
   {
