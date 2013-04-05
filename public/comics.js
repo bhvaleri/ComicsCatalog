@@ -280,6 +280,19 @@ var collection = [
       description: "A man with out pretensions is a man without beliefs. Or something like that, cool quote from the overly pretensious villain."
     })
   },
+  {
+    title: "Planet of the Apes",
+    issue: "001",
+    image: "http://boom-studios.com/media/catalog/product/cache/1/image/290x435/5e06319eda06f020e43594a9c230972d/P/O/POTA_Betrayal_01_CVA.jpg",
+    comic: new Comic({
+      title: "Betrayal of the Planet of the Apes",
+      issue: "001",
+      image: "http://boom-studios.com/media/catalog/product/cache/1/image/290x435/5e06319eda06f020e43594a9c230972d/P/O/POTA_Betrayal_01_CVA.jpg",
+      author: "Bechko & Hardman",
+      artist: "Hardman",
+      description: "Picked up the trade paper back of this whole mini series, love seeing Dr. Zaius as a good guy."
+    })
+  },
 ];
 var Covers = new CoverList(collection);
 
