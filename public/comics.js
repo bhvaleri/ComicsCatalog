@@ -6,6 +6,7 @@ var Comic = Backbone.Model.extend({
       author: "Missing author",
       artist: "Missing artist",
       description: "no description...",
+      date: "Never?", 
       image: "xmen.jpg",
     };
   },
@@ -34,6 +35,10 @@ var Comic = Backbone.Model.extend({
 
     if (!this.get("image")) {
       this.set({"image": this.defaults().image});
+    }
+
+    if (!this.get("date")) {
+      this.set({"date": this.defaults().date});
     }
   },
 });
@@ -292,14 +297,17 @@ var AppView = Backbone.View.extend({
     var artist = this.artist.val();
     var image = this.image.val();
     var description = this.description.val();
+
+    var date = new Date().toDateString();
     
     var comic = new Comic({
-      title: this.title.val(),
-      issue: this.issue.val(),
-      author: this.author.val(),
-      artist: this.artist.val(),
-      image: this.image.val(),
-      description: this.description.val()
+      title: title,
+      issue: issue,
+      author: author,
+      artist: artist,
+      image: image,
+      date: date,
+      description: description
     });
 
     Covers.create({
